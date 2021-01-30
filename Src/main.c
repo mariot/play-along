@@ -23,6 +23,10 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
+#include <stdlib.h>
+
+#include "music.h"
+#include "led.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -102,7 +106,10 @@ int main(void) {
     MX_USB_PCD_Init();
     /* USER CODE BEGIN 2 */
     initialise_monitor_handles();
-    printf("Hello\n");
+    char blowin_smoke[] = "A,D,A,D,A,D,A,D,A,D,A,D,0,A,D,A,D,A,D,A,0,0,A,D,A,D,A,D,A,D,A,D,A,D,0";
+    step *start = create_music(blowin_smoke);
+    play_music(start, on_chord, on_strum, on_wait);
+    release_music(start);
     /* USER CODE END 2 */
 
     /* Infinite loop */
