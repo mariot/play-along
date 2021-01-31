@@ -22,9 +22,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include <stdio.h>
-#include <stdlib.h>
-
 #include "music.h"
 #include "led.h"
 /* USER CODE END Includes */
@@ -66,7 +63,7 @@ static void MX_SPI1_Init(void);
 static void MX_USB_PCD_Init(void);
 
 /* USER CODE BEGIN PFP */
-extern void initialise_monitor_handles(void);
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -105,10 +102,9 @@ int main(void) {
     MX_SPI1_Init();
     MX_USB_PCD_Init();
     /* USER CODE BEGIN 2 */
-    initialise_monitor_handles();
     char blowin_smoke[] = "A,D,A,D,A,D,A,D,A,D,A,D,0,A,D,A,D,A,D,A,0,0,A,D,A,D,A,D,A,D,A,D,A,D,0";
     step *start = create_music(blowin_smoke);
-    play_music(start, on_chord, on_strum, on_wait);
+    play_music(start, on_strum, on_wait);
     release_music(start);
     /* USER CODE END 2 */
 
@@ -116,7 +112,8 @@ int main(void) {
     /* USER CODE BEGIN WHILE */
     while (1) {
         /* USER CODE END WHILE */
-
+        HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_15);
+        HAL_Delay(500);
         /* USER CODE BEGIN 3 */
     }
     /* USER CODE END 3 */
@@ -333,7 +330,11 @@ void Error_Handler(void) {
     /* USER CODE BEGIN Error_Handler_Debug */
     /* User can add his own implementation to report the HAL error return state */
     __disable_irq();
-    while (1) {}
+    while (1) {
+        HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_9);
+        HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_13);
+        HAL_Delay(500);
+    }
     /* USER CODE END Error_Handler_Debug */
 }
 

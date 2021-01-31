@@ -11,11 +11,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e0228e2-8850-4224-95c9-979b994189e1" name="Default Changelist" comment="simulate leds with printf">
+    <list default="true" id="0e0228e2-8850-4224-95c9-979b994189e1" name="Default Changelist" comment="use uint16_t instead of int">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Inc/led.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/led.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Inc/music.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/music.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Src/led.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/led.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Src/music.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/music.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,6 +65,11 @@
     <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RunManager" selected="OpenOCD Download &amp; Run.OCD PlayAlong">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -85,7 +91,7 @@
       <workItem from="1611977846379" duration="2078000" />
       <workItem from="1611980677165" duration="1865000" />
       <workItem from="1612001088833" duration="4924000" />
-      <workItem from="1612118720365" duration="2634000" />
+      <workItem from="1612118720365" duration="7537000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1612002969189</created>
@@ -136,11 +142,29 @@
       <option name="project" value="LOCAL" />
       <updated>1612007416886</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="use uint16_t instead of int">
+      <created>1612121494801</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1612121494801</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
@@ -148,6 +172,7 @@
     <MESSAGE value="create music playing library" />
     <MESSAGE value="create led controlling library" />
     <MESSAGE value="simulate leds with printf" />
-    <option name="LAST_COMMIT_MESSAGE" value="simulate leds with printf" />
+    <MESSAGE value="use uint16_t instead of int" />
+    <option name="LAST_COMMIT_MESSAGE" value="use uint16_t instead of int" />
   </component>
 </project>

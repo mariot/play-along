@@ -8,10 +8,9 @@
 
 #include "music.h"
 
-void play_music(step *start, void(*on_chord)(char*), void(*on_strum)(uint16_t), void(*on_wait)(char*)) {
+void play_music(step *start, void(*on_strum)(uint16_t), void(*on_wait)()) {
     step *i = start;
     for (; i != NULL ; i = i->next) {
-        on_chord(i->chord);
         for (int j = 0; j < i->number_of_strums; ++j) {
             on_strum(i->interval);
         }
@@ -33,12 +32,12 @@ step *create_step(char *chord, uint16_t interval, uint16_t number_of_strums) {
 step *create_music(char *chords) {
     char delim[] = ",";
     char *ptr = strtok(chords, delim);
-    step *start = create_step(ptr, 1000, 4);
+    step *start = create_step(ptr, 500, 4);
     step *previous = start;
     ptr = strtok(NULL, delim);
     while(ptr != NULL)
     {
-        step *next = create_step(ptr, 1000, 4);
+        step *next = create_step(ptr, 500, 4);
         previous->next = next;
         previous = next;
         ptr = strtok(NULL, delim);

@@ -6,7 +6,6 @@
 #define PLAYALONG_LED_H
 
 void on_strum(uint16_t interval);
-void on_chord(char* chord);
-void on_wait(char* chord);
+void on_wait();
 
 #endif //PLAYALONG_LED_H
