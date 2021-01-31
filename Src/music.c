@@ -3,11 +3,12 @@
 //
 
 #include <stdlib.h>
+#include <stdint.h>
 #include <string.h>
 
 #include "music.h"
 
-void play_music(step *start, void(*on_chord)(char*), void(*on_strum)(int), void(*on_wait)(char*)) {
+void play_music(step *start, void(*on_chord)(char*), void(*on_strum)(uint16_t), void(*on_wait)(char*)) {
     step *i = start;
     for (; i != NULL ; i = i->next) {
         on_chord(i->chord);
@@ -20,7 +21,7 @@ void play_music(step *start, void(*on_chord)(char*), void(*on_strum)(int), void(
     }
 }
 
-step *create_step(char *chord, int interval, int number_of_strums) {
+step *create_step(char *chord, uint16_t interval, uint16_t number_of_strums) {
     step *i = malloc(sizeof(step));
     i->chord = strdup(chord);
     i->interval = interval;

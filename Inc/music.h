@@ -12,8 +12,8 @@ typedef struct step {
     struct step *next;
 } step;
 
-void play_music(step *start, void(*on_chord)(char*), void (*on_strum)(int), void(*on_wait)(char*));
-step *create_step(char *chord, int interval, int number_of_strums);
+void play_music(step *start, void(*on_chord)(char*), void (*on_strum)(uint16_t), void(*on_wait)(char*));
+step *create_step(char *chord, uint16_t interval, uint16_t number_of_strums);
 step *create_music(char *chords);
 void release_music(step *start);
 

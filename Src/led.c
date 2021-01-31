@@ -6,7 +6,7 @@
 
 #include "led.h"
 
-void on_strum(int interval) {
+void on_strum(uint16_t interval) {
     printf("Strum\n");
     sleep(interval / 1000);
 }
